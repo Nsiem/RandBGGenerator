@@ -1,12 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Banner from './Banner';
+import './App.css'
 
 function App() {
   return (
-    <div className="App" onClick={() => console.log('clicked')}>
-      Hello, world nerd
+    <div>
+      <Banner />
+      <Banner />
     </div>
-  );
+    
+  )
 }
 
 export default App;
