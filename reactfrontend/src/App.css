@@ -3,3 +3,8 @@
   background-color:white;
 }
 
+.BGviewer {
+  display: flex;
+  justify-content: center;
+}
+

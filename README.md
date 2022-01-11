@@ -1,2 +1,2 @@
-# foodroulette
-Food roulette app utilizing google api to find restaurants near the user and recommends one
+# RandBGGenerator
+RandBGGenerator viewer via Wallpaper Abyss API
