@@ -1,2 +1,2 @@
-# RandImg
-Random image viewer via Imgur API
+# RandBGGenerator
+RandBGGenerator viewer via Wallpaper Abyss API
