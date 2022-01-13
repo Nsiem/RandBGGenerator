@@ -1,1 +1,0 @@
-'mongodb+srv://foodrouletteuser:bradhickey@foodroulettecluster.jod8a.mongodb.net/foodroulette?retryWrites=true&w=majority'

@@ -1,26 +1,24 @@
 import React from "react";
-const posts = [
-  { id: '1', name: 'This first post is about React' },
-  { id: '2', name: 'This next post is about Preact' },
-  { id: '3', name: 'We have yet another React post!' },
-  { id: '4', name: 'This is the fourth and final post' },
-];
-export default function Banner() {
+import axios from "axios";
+
+export default class Banner extends React.Component {
+
+  isClicked() {
+    axios.get("http://localhost:5000/").then(resp => {
+      document.getElementById("imgView").src = resp.data
+    })
+  }
+
+  render() {
     return (
-        <div className="theBanner" onClick={() => console.log('clicked')}>
-          <form action="/" method="get">
-              <label htmlFor="header-search">
-                  <span className="visually-hidden">Search for a Random Image</span>
-              </label>
-              <input
-                type="text"
-                id="header-search"
-                placeholder="Image Topic"
-                name="s" 
-              />
-              <button type="submit">Search</button>
-            </form>
-            
+      <div className="theBanner">
+        <div id="searchdiv">
+          <input type="text" id="header-search" placeholder="Enter tags related to BG you want" maxLength={"100"}/>
         </div>
+        <div>
+          <button id="searchbutton" type="button" onClick={this.isClicked}>Search</button>
+        </div>          
+      </div>
     )
+  }
 }
