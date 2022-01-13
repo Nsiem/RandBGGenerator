@@ -1,17 +1,21 @@
 import React from "react";
 import Banner from './Banner';
+import Imageviewer from "./Imageviewer";
 import './App.css'
-function App() {
-  return (
-    <div>
-      <Banner />
-      <div className="BGviewer" >
-        <img src="logo512.png"></img>
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+class App extends React.Component {
+  render() {
+    return(
+      <div>
+        <Banner/>
+        <Imageviewer/>
+        <footer id="thefooter">
+          <a href="https://wall.alphacoders.com/"> Powered by Wallpaper Abyss</a>
+        </footer>
       </div>
-      
-    </div>
-    
-  )
+    )
+  }
 }
 
 export default App;

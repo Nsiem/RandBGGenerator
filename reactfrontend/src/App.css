@@ -1,10 +1,74 @@
 .theBanner {
   text-align: center;
-  background-color:white;
+  background-color:rgb(22, 81, 160);
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+#searchbutton {
+  height: 36px;
+  margin-top: 5px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border: 0px;
+  border-left: 2px;
+  border-left-color: black;
+  background-color:aliceblue;
+  padding: 0%;
+  width: 50px;
+}
+
+#searchbutton:hover {
+  color: grey;
+}
+
+#searchbutton:active {
+  background-color:gainsboro;
+}
+
+#searchdiv {
+  padding-right: 0px;
+}
+
+#header-search {
+  background-color: aliceblue;
+  padding: 0px;
+  height: 36px;
+  margin-top: 5px;
+  width: 240px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  
+  border-right-color: lightgrey;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+
+#header-search:focus {
+  outline:1px solid darkgrey;
+  border-right-color: darkgrey;
 }
 
 .BGviewer {
   display: flex;
-  justify-content: center;
+  justify-content: right;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
+#imgView {
+  margin-right: 50px;
+  width: 100%;
+  max-width: 1400px;
+  border: 3px solid rgb(194, 194, 194);
+  margin-right: 10px;
+}
+
+#thefooter {
+  display: flex;
+  justify-content: right;
+  margin-right: 5px;
+}

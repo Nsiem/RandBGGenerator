@@ -1,27 +1,23 @@
 import React from "react";
-import { render } from "react-dom";
+import axios from "axios";
 
 export default class Banner extends React.Component {
+
   isClicked() {
-    console.log("it was clicked!")
-    document.getElementById("label1").innerText = "Hello 2!"
+    axios.get("http://localhost:5000/").then(resp => {
+      document.getElementById("imgView").src = resp.data
+    })
   }
 
   render() {
     return (
       <div className="theBanner">
-        <form action="/" method="get">
-            <label id="label1">hello</label>
-            
-            <input
-              type="text"
-              id="header-search"
-              placeholder="Image Topic"
-              name="s" 
-            />
-            <button id="searchbutton" type="button" onClick={this.isClicked}>Search</button>
-          </form>
-          
+        <div id="searchdiv">
+          <input type="text" id="header-search" placeholder="Enter tags related to BG you want" maxLength={"100"}/>
+        </div>
+        <div>
+          <button id="searchbutton" type="button" onClick={this.isClicked}>Search</button>
+        </div>          
       </div>
     )
   }
