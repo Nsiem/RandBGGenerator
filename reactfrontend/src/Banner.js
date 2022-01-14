@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 
 export default class Banner extends React.Component {
-
   isClicked() {
     if (document.getElementById('header-search').value === ""){document.getElementById('errorlabel').innerText = "Please enter a tag"; document.getElementById('errorlabel').style.visibility = "visible"; return}
     axios.get(`http://localhost:5000/wallpaper/${document.getElementById('header-search').value}`).then(resp => {
@@ -23,6 +22,9 @@ export default class Banner extends React.Component {
   render() {
     return (
       <div className="theBanner">
+        <a href="">
+          <img id="logo" src="logo.png"></img>
+        </a>
         <label id="errorlabel"></label>
         <div id="searchdiv">
           <input type="text" id="header-search" placeholder="Enter tags related to BG you want" maxLength={"100"}/>
