@@ -48,12 +48,17 @@ app.get('/wallpaper/:query', (req,res) => {
         if (total == 0) {res.send("0"); return}
         if (total > 30) {
             pages = parseInt(total / 30)
-            //HERE
-            selected = Math.floor(Math.random() * 30)
-            wallpaper = resp.data['wallpapers'][selected]['url_image']
-            let yourDate = new Date()
-            createitem(req.params.query, wallpaper, yourDate.toISOString().split('T')[0])
-            res.send(wallpaper)
+            pagesrand = Math.floor(Math.random() * pages) + 1
+            axios.get(`https://wall.alphacoders.com/api2.0/get.php?auth=${apikey}&method=search&term=${query}&page=${pagesrand}`).then((resp) => {
+                selected = Math.floor(Math.random() * 30)
+                wallpaper = resp.data['wallpapers'][selected]['url_image']
+                let yourDate = new Date()
+                createitem(req.params.query, wallpaper, yourDate.toISOString().split('T')[0])
+                res.send(wallpaper)
+            }).catch((err) => {
+                console.log(err)
+                res.send("0")
+            })
         } else {
             selected = Math.floor(Math.random() * total)
             wallpaper = resp.data['wallpapers'][selected]['url_image']
