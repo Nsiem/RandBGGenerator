@@ -16,6 +16,7 @@ app.use(cors())
 app.use(morgan('tiny'))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+app.use(express.static('./build'))
 
 const dbURI = process.env.DBURI
 
