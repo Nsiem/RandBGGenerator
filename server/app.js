@@ -47,6 +47,8 @@ app.get('/wallpaper/:query', (req,res) => {
         total = resp.data['total_match']
         if (total == 0) {res.send("0"); return}
         if (total > 30) {
+            pages = parseInt(total / 30)
+            //HERE
             selected = Math.floor(Math.random() * 30)
             wallpaper = resp.data['wallpapers'][selected]['url_image']
             let yourDate = new Date()
