@@ -73,7 +73,7 @@ app.get('/wallpaper/:query', (req,res) => {
 })
 
 app.get('/history', (req,res) => {
-    Items.find({}).sort({_id: -1}).then((result) => {
+    Items.find({}).sort({_id: -1}).limit(100).then((result) => {
         res.send(result)
     }).catch((err) => {
         console.log(err)

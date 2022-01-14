@@ -90,4 +90,19 @@
 
 #errorlabel {
   visibility: hidden;
+  margin-top: 10px;
+  margin-right: 5px;
+  font-weight: bold;
+  color: rgb(202, 51, 51);
+}
+
+#history {
+  font-weight: bold;
+}
+
+#logo {
+  position: absolute;
+  left: 10px;
+  height: 45px;
+  top: 2px;
 }
